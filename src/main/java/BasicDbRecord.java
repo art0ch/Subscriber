@@ -17,7 +17,7 @@ public abstract class BasicDbRecord {
 
     final static String DB_URL = "jdbc:postgresql://localhost:5432/pub-sub";
     final static String USER = "postgres";
-    final static String PASS = "ghbdtnrfrltkf";
+    final static String PASS = "password";
     private Connection connection = null;
     ArrayList<String> columnNames = new ArrayList<>();
 
