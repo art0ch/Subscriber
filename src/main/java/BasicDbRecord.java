@@ -23,8 +23,7 @@ public abstract class BasicDbRecord {
 
     abstract String getTableName();
     abstract PreparedStatement fillStatement(PreparedStatement preparedStatement) throws SQLException;
-
-
+    
     public Connection getConnection() {
         return connection;
     }
