@@ -17,13 +17,14 @@ public abstract class BasicDbRecord {
 
     final static String DB_URL = "jdbc:postgresql://localhost:5432/pub-sub";
     final static String USER = "postgres";
-    final static String PASS = "password";
+    final static String PASS = "ghbdtnrfrltkf";
     private Connection connection = null;
     ArrayList<String> columnNames = new ArrayList<>();
 
     abstract String getTableName();
     abstract PreparedStatement fillStatement(PreparedStatement preparedStatement) throws SQLException;
-    
+
+
     public Connection getConnection() {
         return connection;
     }
