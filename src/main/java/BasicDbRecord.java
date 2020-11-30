@@ -22,8 +22,10 @@ public abstract class BasicDbRecord {
     ArrayList<String> columnNames = new ArrayList<>();
 
     abstract String getTableName();
+
     abstract PreparedStatement fillStatement(PreparedStatement preparedStatement) throws SQLException;
 
+    abstract void setColumnNames();
 
     public Connection getConnection() {
         return connection;
@@ -51,7 +53,6 @@ public abstract class BasicDbRecord {
             connection.close();
             logger.info("The connection is closed");
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
             logger.error("The connection can't be closed", throwables);
         }
 
@@ -88,6 +89,7 @@ public abstract class BasicDbRecord {
     }
 
     public void record() throws SQLException {
+        setColumnNames();
         Connection conn = getConnection();
         PreparedStatement preparedStatement = conn.prepareStatement(getStatement());
         preparedStatement = fillStatement(preparedStatement);

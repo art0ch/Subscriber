@@ -8,15 +8,20 @@ public class SubscriptionDbRecord extends BasicDbRecord {
 
     private static final Logger logger = LoggerFactory.getLogger(SubscriptionDbRecord.class);
 
-    long msisdn;
-    long timestamp;
+    private long msisdn;
+    private long timestamp;
 
-    public SubscriptionDbRecord(long msisdn, long timestamp) throws SQLException {
-        super();
+    public void setMsisdn(long msisdn) {
         this.msisdn = msisdn;
+    }
+
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
-        setColumnNames();
-        super.record();
+    }
+
+
+    public SubscriptionDbRecord() throws SQLException {
+        super();
     }
 
     public void setColumnNames() {

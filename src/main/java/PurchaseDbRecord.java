@@ -8,15 +8,19 @@ public class PurchaseDbRecord extends BasicDbRecord {
 
     private static final Logger logger = LoggerFactory.getLogger(PurchaseDbRecord.class);
 
-    long msisdn;
-    long timestamp;
+    private long msisdn;
+    private long timestamp;
 
-    public PurchaseDbRecord(long msisdn, long timestamp) throws SQLException {
-        super();
+    public void setMsisdn(long msisdn) {
         this.msisdn = msisdn;
+    }
+
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
-        setColumnNames();
-        super.record();
+    }
+
+    public PurchaseDbRecord() throws SQLException {
+        super();
     }
 
     public void setColumnNames() {
